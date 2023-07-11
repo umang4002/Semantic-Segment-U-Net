@@ -1,6 +1,7 @@
 # 1)Dataset and paper
    
   dataset:https://www.kaggle.com/datasets/kumaresanmanickavelu/lyft-udacity-challenge
+  
   paper: https://arxiv.org/abs/1505.04597
 
 # 2)Data Preprocessing
@@ -82,9 +83,10 @@
         to the number of filters used, so when you use 1x1 convolutions, you can 
         transform that dimension by choosing an appropriate number of 1x1 filters. 
         
-        
-      ![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/5210c58d-5d4c-4be8-82ac-72f6b7f1dc7b)
+      [![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777)]
 
+        
+         
 
           
 
