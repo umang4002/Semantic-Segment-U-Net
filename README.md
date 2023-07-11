@@ -14,11 +14,15 @@
     
   **2.2 Creating a function for reading images and masks and returning equivalent arrays**
   
-    The *read_image* function will
+    The read_image function will
+    
     1. Read an image and its mask from the paths
+    
     2. Convert the masks and images into arrays
+    
     3. Normalize the datasets
-# 3)Model architecture and training
+    
+# 3)Model architecture and training**
 
     Semantic segmentation is a computer vision task that involves dividing an image into    
     different regions or segments, where each segment represents a specific object or class 
@@ -35,9 +39,9 @@
     size of the input image while preserving important spatial details, which are vital for 
     tasks like image segmentation.
 
-#   U-Net architecture**:
+    **U-Net architecture**:
     
-#   1. Contracting path(Encoder for downsampling process)**
+   **1. Contracting path(Encoder for downsampling process)**
     
         The contracting path of U-Net follows a typical CNN structure, consisting of 
         convolutional layers, activation functions (ReLU), and pooling layers. These 
@@ -51,7 +55,7 @@
         before size reduction. This is passed to the expanding blocks during the upsampling 
         process using **skip layers**.
 
-#    2. Expanding path(Decoder for upsampling)**
+   **2. Expanding path(Decoder for upsampling)**
     
          Upsampling is performed for bringing back the reduced image from downsampling 
          to its original size while shrinking the channels gradually.
@@ -60,7 +64,7 @@
          halves the number of feature channels while growing the height and width of 
          the image.
 
-#    3.1 U-Net Model Design**
+  **3.1 U-Net Model Design**
     
           A) Define a function that represents an encoding block in the U-Net model. The     
             function will return the next layer output and the skip connection output for 
@@ -75,7 +79,7 @@
         Next is a concatenation with the correspondingly cropped feature map from the   
         downsampling and two 3x3 convolutions followed by ReLU.
 
-   #  3.2 Final Feature Mapping Block**
+   **3.2 Final Feature Mapping Block**
     
         At the final layer, a 1x1 convolution is used to map each 64-component feature 
         vector to the desired number of classes. In total, the network has **23 
