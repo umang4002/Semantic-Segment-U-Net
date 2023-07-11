@@ -35,9 +35,9 @@
     size of the input image while preserving important spatial details, which are vital for 
     tasks like image segmentation.
 
-    **U-Net architecture**:
+#   U-Net architecture**:
     
-    **1. Contracting path(Encoder for downsampling process)**
+#   1. Contracting path(Encoder for downsampling process)**
     
         The contracting path of U-Net follows a typical CNN structure, consisting of 
         convolutional layers, activation functions (ReLU), and pooling layers. These 
@@ -51,7 +51,7 @@
         before size reduction. This is passed to the expanding blocks during the upsampling 
         process using **skip layers**.
 
-    **2. Expanding path(Decoder for upsampling)**
+#    2. Expanding path(Decoder for upsampling)**
     
          Upsampling is performed for bringing back the reduced image from downsampling 
          to its original size while shrinking the channels gradually.
@@ -60,7 +60,7 @@
          halves the number of feature channels while growing the height and width of 
          the image.
 
-    **3.1 U-Net Model Design**
+#    3.1 U-Net Model Design**
     
           A) Define a function that represents an encoding block in the U-Net model. The     
             function will return the next layer output and the skip connection output for 
@@ -75,7 +75,7 @@
         Next is a concatenation with the correspondingly cropped feature map from the   
         downsampling and two 3x3 convolutions followed by ReLU.
 
-    **3.2 Final Feature Mapping Block**
+   #  3.2 Final Feature Mapping Block**
     
         At the final layer, a 1x1 convolution is used to map each 64-component feature 
         vector to the desired number of classes. In total, the network has **23 
@@ -84,6 +84,61 @@
         transform that dimension by choosing an appropriate number of 1x1 filters. 
         
       [![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777)]
+
+
+# 4. Model Evaluation
+     
+     Model Evaluation is a critical step in the development process to determine the 
+     effectiveness of our model and how well it will perform in the future. When dealing with       classification tasks, relying solely on model accuracy may not provide a complete picture       of its performance, especially when dealing with imbalanced datasets. In dense                prediction tasks like image segmentation, where the goal is to simplify or change the          representation of an image into meaningful classes, it becomes even more challenging to        assess the model's ability to accurately partition different classes.
+
+     To overcome these limitations, we employ additional metrics such as precision, recall,         Intersection over Union (IoU), and F1-score to evaluate our model's performance. These         metrics provide valuable insights into how well our model performs in partitioning             different classes. By calculating the confusion matrix between the predicted             
+     segmentations and the ground truth segmentations, we can identify true positives (TP), 
+     true negatives (TN), false positives (FP), and false negatives (FN). Using these 
+     values, we compute metrics like recall, precision, IoU, and F1-score to assess the 
+     model's performance.
+
+      In summary, model evaluation goes beyond simple accuracy measurements when dealing with 
+      dense prediction tasks like image segmentation. By incorporating metrics like recall, 
+      precision, IoU, and F1-score, we gain a more comprehensive understanding of how well our 
+      model performs in accurately partitioning different classes within an image.
+
+      The expressions for these metrics are defined as:
+      
+         1) Precision = TP/(TP + FP)
+         
+         2) Recall/Sensitivity = TP/(TP + FN)
+         
+         3) Intersection over Union (IoU)/Jaccard Similarity = TP/(TP + FP + FN)
+         
+         4)F1-score(JS)/Dice coefficient = 2 * ((Precision * Recall)/(Precision + Recall))
+         
+
+      To carry out these evaluations, we will:
+
+      1)Create segmentations/masks of images in our dataset
+      
+      2)Evaluate predicted segmentations
+
+# 5. Predict image segmentations using the trained model
+
+     Though our model is performing well, visualizing it how it performs on these datasets
+     could give us additional gains.
+
+     1)It invloves creating a function for preprocessing selected images and display their 
+       true mask and predicted mask.
+       
+     2) Predict and compare masks of images in the training set.
+
+     3) Predict and compare masks of image in the validation set.
+
+     4) Predict and compare masks of images in the test set.
+
+# 6. Segmented Images
+
+     
+     
+
+      
 
         
          
