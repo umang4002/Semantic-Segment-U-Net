@@ -5,15 +5,20 @@
 
 # 2)Data Preprocessing
   **2.1 Loading images and masks from their directories**
+  
     In this step, we will:
     1. Create 2 separate lists containing the paths of images and masks.
     2. Split the lists into training, testing, and validation datasets
+
+    
   **2.2 Creating a function for reading images and masks and returning equivalent arrays**
+  
     The *read_image* function will
     1. Read an image and its mask from the paths
     2. Convert the masks and images into arrays
     3. Normalize the datasets
 # 3)Model architecture and training
+
     Semantic segmentation is a computer vision task that involves dividing an image into    
     different regions or segments, where each segment represents a specific object or class 
     of objects. In other words, it assigns a semantic label to each pixel in the image, 
@@ -30,7 +35,9 @@
     tasks like image segmentation.
 
     **U-Net architecture**:
+    
     **1. Contracting path(Encoder for downsampling process)**
+    
         The contracting path of U-Net follows a typical CNN structure, consisting of 
         convolutional layers, activation functions (ReLU), and pooling layers. These 
         layers work together to reduce the size of the image and extract its important 
@@ -44,6 +51,7 @@
         process using **skip layers**.
 
     **2. Expanding path(Decoder for upsampling)**
+    
          Upsampling is performed for bringing back the reduced image from downsampling 
          to its original size while shrinking the channels gradually.
          Every step in the expansive path consists of an upsampling of the feature map 
@@ -52,18 +60,22 @@
          the image.
 
     **3.1 U-Net Model Design**
+    
           A) Define a function that represents an encoding block in the U-Net model. The     
             function will return the next layer output and the skip connection output for 
             the corresponding block in the model
+            
           B) Define a function that represents a decoding block in the U-Net model. This   
              function will merge the skip-connection input with the previous layer, 
              process it, and return an output.
+             
           C) Develop a model using both the encoding and decoding blocks output.
 
         Next is a concatenation with the correspondingly cropped feature map from the   
         downsampling and two 3x3 convolutions followed by ReLU.
 
     **3.2 Final Feature Mapping Block**
+    
         At the final layer, a 1x1 convolution is used to map each 64-component feature 
         vector to the desired number of classes. In total, the network has **23 
         convolutional layers**. The channel dimension from the previous layer corresponds
@@ -71,7 +83,8 @@
         transform that dimension by choosing an appropriate number of 1x1 filters. 
         
         
-      ![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/89f6d758-797f-4102-895b-ced97e65f67b)
+      ![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/5210c58d-5d4c-4be8-82ac-72f6b7f1dc7b)
+
 
           
 
