@@ -22,14 +22,14 @@
     
     3. Normalize the datasets
     
-# 3)Model architecture and training**
+# 3)Model architecture and training
 
     Semantic segmentation is a computer vision task that involves dividing an image into    
     different regions or segments, where each segment represents a specific object or class 
     of objects. In other words, it assigns a semantic label to each pixel in the image, 
     effectively creating a pixel-level understanding of the scene.
     
-    We will use the **U-Net**architecture for our semantic segmentation task. The U-net model
+    We will use the U-Net architecture for our semantic segmentation task. The U-net model
     has a U-shaped architecture. It was created previously in 2015 for Biomedical image      
     segmentation but now has a number of different use cases.
     
@@ -53,7 +53,7 @@
         is doubled.
         During the contracting process, convolution outputs are stored in separate variables
         before size reduction. This is passed to the expanding blocks during the upsampling 
-        process using **skip layers**.
+        process using skip layers.
 
    **2. Expanding path(Decoder for upsampling)**
     
@@ -82,12 +82,14 @@
    **3.2 Final Feature Mapping Block**
     
         At the final layer, a 1x1 convolution is used to map each 64-component feature 
-        vector to the desired number of classes. In total, the network has **23 
-        convolutional layers**. The channel dimension from the previous layer corresponds
+        vector to the desired number of classes. In total, the network has 23 
+        convolutional layers. The channel dimension from the previous layer corresponds
         to the number of filters used, so when you use 1x1 convolutions, you can 
         transform that dimension by choosing an appropriate number of 1x1 filters. 
+
+
         
-      [![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777)]
+[![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777)]
 
 
 # 4. Model Evaluation
