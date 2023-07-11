@@ -39,8 +39,8 @@
     size of the input image while preserving important spatial details, which are vital for 
     tasks like image segmentation.
 
-    **U-Net architecture**:
-    
+   **U-Net architecture**:
+     
    **1. Contracting path(Encoder for downsampling process)**
     
         The contracting path of U-Net follows a typical CNN structure, consisting of 
