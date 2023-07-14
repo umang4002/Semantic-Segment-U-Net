@@ -43,7 +43,7 @@
 
  ### **3.1 U-Net architecture**:
      
-      **1 .Contracting path(Encoder for downsampling process)**
+   **1 .Contracting path(Encoder for downsampling process)**
     
         The contracting path of U-Net follows a typical CNN structure, consisting of 
         convolutional layers, activation functions (ReLU), and pooling layers. These 
@@ -57,7 +57,7 @@
         before size reduction. This is passed to the expanding blocks during the upsampling 
         process using skip layers.
 
-   ** 2. Expanding path(Decoder for upsampling)**
+   **2. Expanding path(Decoder for upsampling)**
     
          Upsampling is performed for bringing back the reduced image from downsampling 
          to its original size while shrinking the channels gradually.
@@ -81,7 +81,7 @@
         Next is a concatenation with the correspondingly cropped feature map from the   
         downsampling and two 3x3 convolutions followed by ReLU.
 
-   ** 3. Final Feature Mapping Block**
+   **3. Final Feature Mapping Block**
     
         At the final layer, a 1x1 convolution is used to map each 64-component feature 
         vector to the desired number of classes.  The channel dimension from the previous 
@@ -89,7 +89,7 @@
         you can transform that dimension by choosing an appropriate number of 1x1 filters. 
         
    In total, the network has 23 convolutional layers.
-   ![image]([https://i.ibb.co/0287bZ1/U-Net.web](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777))
+   ![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777)
 
  ## **4. Model Evaluation**
      
