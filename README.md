@@ -7,14 +7,14 @@
 ## **2. Data Preprocessing**
 <a class="anchor" id="2-1" name="2-1"></a>
 
-### **2.1 Loading images and masks from their directories**
+   **2.1 Loading images and masks from their directories**
   
     In this step, we will:
     1. Create 2 separate lists containing the paths of images and masks.
     2. Split the lists into training, testing, and validation datasets
 
     
-#### **2.2 Creating a function for reading images and masks and returning equivalent arrays**
+  **2.2 Creating a function for reading images and masks and returning equivalent arrays**
   
     The read_image function will
     
