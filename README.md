@@ -89,9 +89,7 @@
         you can transform that dimension by choosing an appropriate number of 1x1 filters. 
         
    In total, the network has 23 convolutional layers.
-   <center><img src="[https://i.ibb.co/0287bZ1/U-Net.web](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777))p" alt="U-Net" border="0"></center>
-
-   <a class="anchor" id="4" name="4"></a>
+   ![image]([https://i.ibb.co/0287bZ1/U-Net.web](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777))
 
  ## **4. Model Evaluation**
      
