@@ -1,18 +1,20 @@
-# 1)Dataset and paper
+## **1. Dataset and paper**
    
   dataset:https://www.kaggle.com/datasets/kumaresanmanickavelu/lyft-udacity-challenge
   
   paper: https://arxiv.org/abs/1505.04597
 
-# 2)Data Preprocessing
-  **2.1 Loading images and masks from their directories**
+## **2. Data Preprocessing**
+<a class="anchor" id="2-1" name="2-1"></a>
+
+### **2.1 Loading images and masks from their directories**
   
     In this step, we will:
     1. Create 2 separate lists containing the paths of images and masks.
     2. Split the lists into training, testing, and validation datasets
 
     
-  **2.2 Creating a function for reading images and masks and returning equivalent arrays**
+#### **2.2 Creating a function for reading images and masks and returning equivalent arrays**
   
     The read_image function will
     
@@ -22,7 +24,7 @@
     
     3. Normalize the datasets
     
-# 3)Model architecture and training
+## **3. Model architecture and training**
 
     Semantic segmentation is a computer vision task that involves dividing an image into    
     different regions or segments, where each segment represents a specific object or class 
@@ -39,9 +41,9 @@
     size of the input image while preserving important spatial details, which are vital for 
     tasks like image segmentation.
 
-   **U-Net architecture**:
+ ### **3.1 U-Net architecture**:
      
-   **1. Contracting path(Encoder for downsampling process)**
+      **1 .Contracting path(Encoder for downsampling process)**
     
         The contracting path of U-Net follows a typical CNN structure, consisting of 
         convolutional layers, activation functions (ReLU), and pooling layers. These 
@@ -55,7 +57,7 @@
         before size reduction. This is passed to the expanding blocks during the upsampling 
         process using skip layers.
 
-   **2. Expanding path(Decoder for upsampling)**
+   ** 2. Expanding path(Decoder for upsampling)**
     
          Upsampling is performed for bringing back the reduced image from downsampling 
          to its original size while shrinking the channels gradually.
@@ -64,7 +66,7 @@
          halves the number of feature channels while growing the height and width of 
          the image.
 
-  **3.1 U-Net Model Design**
+  ### **3.1 U-Net Model Design**
     
           A) Define a function that represents an encoding block in the U-Net model. The     
             function will return the next layer output and the skip connection output for 
@@ -79,20 +81,19 @@
         Next is a concatenation with the correspondingly cropped feature map from the   
         downsampling and two 3x3 convolutions followed by ReLU.
 
-   **3.2 Final Feature Mapping Block**
+   ** 3. Final Feature Mapping Block**
     
         At the final layer, a 1x1 convolution is used to map each 64-component feature 
-        vector to the desired number of classes. In total, the network has 23 
-        convolutional layers. The channel dimension from the previous layer corresponds
-        to the number of filters used, so when you use 1x1 convolutions, you can 
-        transform that dimension by choosing an appropriate number of 1x1 filters. 
-
-
+        vector to the desired number of classes.  The channel dimension from the previous 
+        layer corresponds to the number of filters used, so when you use 1x1 convolutions, 
+        you can transform that dimension by choosing an appropriate number of 1x1 filters. 
         
-[![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777)]
+   In total, the network has 23 convolutional layers.
+   <center><img src="[https://i.ibb.co/0287bZ1/U-Net.web](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/ac392078-b89c-4bc4-abaf-f95e267c3777))p" alt="U-Net" border="0"></center>
 
+   <a class="anchor" id="4" name="4"></a>
 
-# 4. Model Evaluation
+ ## **4. Model Evaluation**
      
      Model Evaluation is a critical step in the development process to determine the 
      effectiveness of our model and how well it will perform in the future. When dealing with       classification tasks, relying solely on model accuracy may not provide a complete picture       of its performance, especially when dealing with imbalanced datasets. In dense                prediction tasks like image segmentation, where the goal is to simplify or change the          representation of an image into meaningful classes, it becomes even more challenging to        assess the model's ability to accurately partition different classes.
@@ -125,7 +126,8 @@
       
       2)Evaluate predicted segmentations
 
-# 5. Predict image segmentations using the trained model
+      <a class="anchor" id="5" name="5"></a>
+  ## **5. Predict image segmentations using the trained model**
 
      Though our model is performing well, visualizing it how it performs on these datasets
      could give us additional gains.
@@ -139,8 +141,10 @@
 
      4) Predict and compare masks of images in the test set.
 
-# 6. Segmented Images
+## **6. Segmented image**
+![image](https://user-images.githubusercontent.com/84759422/177004225-256b1ae9-b31e-47e5-bd8d-6ca5216d70cf.png)
 
+#### Predicted mask shows the segmented image that our model has predicted.
      
      
 
