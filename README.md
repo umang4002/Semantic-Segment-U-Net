@@ -66,7 +66,7 @@
          halves the number of feature channels while growing the height and width of 
          the image.
 
-  ### **3.1 U-Net Model Design**
+  ### **3.2 U-Net Model Design**
     
           A) Define a function that represents an encoding block in the U-Net model. The     
             function will return the next layer output and the skip connection output for 
