@@ -123,6 +123,7 @@
       1)Create segmentations/masks of images in our dataset
       
       2)Evaluate predicted segmentations
+      
 
       <a class="anchor" id="5" name="5"></a>
   ## **5. Predict image segmentations using the trained model**
