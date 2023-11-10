@@ -117,7 +117,7 @@
      4) Predict and compare masks of images in the test set.
 
 ## **6. Segmented image**
-![image](![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/4e8d7a4f-8862-4617-817d-fcd13ab26ecc))
+![image](https://github.com/umang4002/Semantic-Segment-U-Net/assets/111570202/4e8d7a4f-8862-4617-817d-fcd13ab26ecc)
 
 #### Predicted mask shows the segmented image that our model has predicted.
      
