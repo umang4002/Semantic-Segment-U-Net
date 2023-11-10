@@ -117,7 +117,7 @@
      4) Predict and compare masks of images in the test set.
 
 ## **6. Segmented image**
-![image](https://user-images.githubusercontent.com/84759422/177004225-256b1ae9-b31e-47e5-bd8d-6ca5216d70cf.png)
+![image](Results.png)
 
 #### Predicted mask shows the segmented image that our model has predicted.
      
